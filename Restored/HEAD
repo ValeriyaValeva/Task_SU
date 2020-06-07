@@ -1,0 +1,17 @@
+0000000000000000000000000000000000000000 da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590069976 +0300	commit (initial): Initial commit
+da9f497fd7a1d999c3884e4b0312eae003ff1f88 da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590070136 +0300	checkout: moving from master to new
+da9f497fd7a1d999c3884e4b0312eae003ff1f88 da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590070150 +0300	checkout: moving from new to new2
+da9f497fd7a1d999c3884e4b0312eae003ff1f88 da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590070267 +0300	checkout: moving from new2 to master
+da9f497fd7a1d999c3884e4b0312eae003ff1f88 da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590071564 +0300	reset: moving to HEAD
+da9f497fd7a1d999c3884e4b0312eae003ff1f88 da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590423920 +0300	checkout: moving from master to new
+da9f497fd7a1d999c3884e4b0312eae003ff1f88 0000000000000000000000000000000000000000 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590423962 +0300	Branch: renamed refs/heads/new to refs/heads/LoginErrorMsg
+0000000000000000000000000000000000000000 da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590423962 +0300	Branch: renamed refs/heads/new to refs/heads/LoginErrorMsg
+da9f497fd7a1d999c3884e4b0312eae003ff1f88 18e8eac46f8617b11ca21c2a7909d39c92423451 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590589028 +0300	commit: Login error messages validation
+18e8eac46f8617b11ca21c2a7909d39c92423451 ba553a369d69e0b8afe36808d26ac6f2a402f90a Valeriya Valeva <valeriya.valeva@scalefocus.com> 1590589851 +0300	commit: Login error messages validation
+ba553a369d69e0b8afe36808d26ac6f2a402f90a ba553a369d69e0b8afe36808d26ac6f2a402f90a Valeriya Valeva <valeriya.valeva@scalefocus.com> 1591007476 +0300	reset: moving to HEAD
+ba553a369d69e0b8afe36808d26ac6f2a402f90a 0000000000000000000000000000000000000000 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1591008470 +0300	Branch: renamed refs/heads/LoginErrorMsg to refs/heads/login-error-msg
+0000000000000000000000000000000000000000 ba553a369d69e0b8afe36808d26ac6f2a402f90a Valeriya Valeva <valeriya.valeva@scalefocus.com> 1591008470 +0300	Branch: renamed refs/heads/LoginErrorMsg to refs/heads/login-error-msg
+ba553a369d69e0b8afe36808d26ac6f2a402f90a ba553a369d69e0b8afe36808d26ac6f2a402f90a Valeriya Valeva <valeriya.valeva@scalefocus.com> 1591008566 +0300	checkout: moving from login-error-msg to up-type-validation
+ba553a369d69e0b8afe36808d26ac6f2a402f90a 2fca6ee96b160e0b9cfdf9aed51abf3790985500 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1591169280 +0300	commit: Added CRUD operations for UpType page
+2fca6ee96b160e0b9cfdf9aed51abf3790985500 7f3f1e9aeedd629f461b19916ce8e797a723781d Valeriya Valeva <valeriya.valeva@scalefocus.com> 1591266623 +0300	commit: Added Test cases for the Create UpTypes operation
+7f3f1e9aeedd629f461b19916ce8e797a723781d da9f497fd7a1d999c3884e4b0312eae003ff1f88 Valeriya Valeva <valeriya.valeva@scalefocus.com> 1591268019 +0300	checkout: moving from up-type-validation to master

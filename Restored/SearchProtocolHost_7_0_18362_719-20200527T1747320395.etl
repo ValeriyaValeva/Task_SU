@@ -1,0 +1,261 @@
+roviderPtr.prototype);
+  MediaRouteProviderAssociatedPtr.prototype.constructor =
+      MediaRouteProviderAssociatedPtr;
+
+  function MediaRouteProviderProxy(receiver) {
+    this.receiver_ = receiver;
+  }
+  MediaRouteProviderPtr.prototype.createRoute = function() {
+    return MediaRouteProviderProxy.prototype.createRoute
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.createRoute = function(mediaSource, sinkId, originalPresentationId, origin, tabId, timeout, incognito) {
+    var params_ = new MediaRouteProvider_CreateRoute_Params();
+    params_.mediaSource = mediaSource;
+    params_.sinkId = sinkId;
+    params_.originalPresentationId = originalPresentationId;
+    params_.origin = origin;
+    params_.tabId = tabId;
+    params_.timeout = timeout;
+    params_.incognito = incognito;
+    return new Promise(function(resolve, reject) {
+      var builder = new codec.MessageV1Builder(
+          kMediaRouteProvider_CreateRoute_Name,
+          codec.align(MediaRouteProvider_CreateRoute_Params.encodedSize),
+          codec.kMessageExpectsResponse, 0);
+      builder.encodeStruct(MediaRouteProvider_CreateRoute_Params, params_);
+      var message = builder.finish();
+      this.receiver_.acceptAndExpectResponse(message).then(function(message) {
+        var reader = new codec.MessageReader(message);
+        var responseParams =
+            reader.decodeStruct(MediaRouteProvider_CreateRoute_ResponseParams);
+        resolve(responseParams);
+      }).catch(function(result) {
+        reject(Error("Connection error: " + result));
+      });
+    }.bind(this));
+  };
+  MediaRouteProviderPtr.prototype.joinRoute = function() {
+    return MediaRouteProviderProxy.prototype.joinRoute
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.joinRoute = function(mediaSource, presentationId, origin, tabId, timeout, incognito) {
+    var params_ = new MediaRouteProvider_JoinRoute_Params();
+    params_.mediaSource = mediaSource;
+    params_.presentationId = presentationId;
+    params_.origin = origin;
+    params_.tabId = tabId;
+    params_.timeout = timeout;
+    params_.incognito = incognito;
+    return new Promise(function(resolve, reject) {
+      var builder = new codec.MessageV1Builder(
+          kMediaRouteProvider_JoinRoute_Name,
+          codec.align(MediaRouteProvider_JoinRoute_Params.encodedSize),
+          codec.kMessageExpectsResponse, 0);
+      builder.encodeStruct(MediaRouteProvider_JoinRoute_Params, params_);
+      var message = builder.finish();
+      this.receiver_.acceptAndExpectResponse(message).then(function(message) {
+        var reader = new codec.MessageReader(message);
+        var responseParams =
+            reader.decodeStruct(MediaRouteProvider_JoinRoute_ResponseParams);
+        resolve(responseParams);
+      }).catch(function(result) {
+        reject(Error("Connection error: " + result));
+      });
+    }.bind(this));
+  };
+  MediaRouteProviderPtr.prototype.connectRouteByRouteId = function() {
+    return MediaRouteProviderProxy.prototype.connectRouteByRouteId
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.connectRouteByRouteId = function(mediaSource, routeId, presentationId, origin, tabId, timeout, incognito) {
+    var params_ = new MediaRouteProvider_ConnectRouteByRouteId_Params();
+    params_.mediaSource = mediaSource;
+    params_.routeId = routeId;
+    params_.presentationId = presentationId;
+    params_.origin = origin;
+    params_.tabId = tabId;
+    params_.timeout = timeout;
+    params_.incognito = incognito;
+    return new Promise(function(resolve, reject) {
+      var builder = new codec.MessageV1Builder(
+          kMediaRouteProvider_ConnectRouteByRouteId_Name,
+          codec.align(MediaRouteProvider_ConnectRouteByRouteId_Params.encodedSize),
+          codec.kMessageExpectsResponse, 0);
+      builder.encodeStruct(MediaRouteProvider_ConnectRouteByRouteId_Params, params_);
+      var message = builder.finish();
+      this.receiver_.acceptAndExpectResponse(message).then(function(message) {
+        var reader = new codec.MessageReader(message);
+        var responseParams =
+            reader.decodeStruct(MediaRouteProvider_ConnectRouteByRouteId_ResponseParams);
+        resolve(responseParams);
+      }).catch(function(result) {
+        reject(Error("Connection error: " + result));
+      });
+    }.bind(this));
+  };
+  MediaRouteProviderPtr.prototype.terminateRoute = function() {
+    return MediaRouteProviderProxy.prototype.terminateRoute
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.terminateRoute = function(routeId) {
+    var params_ = new MediaRouteProvider_TerminateRoute_Params();
+    params_.routeId = routeId;
+    return new Promise(function(resolve, reject) {
+      var builder = new codec.MessageV1Builder(
+          kMediaRouteProvider_TerminateRoute_Name,
+          codec.align(MediaRouteProvider_TerminateRoute_Params.encodedSize),
+          codec.kMessageExpectsResponse, 0);
+      builder.encodeStruct(MediaRouteProvider_TerminateRoute_Params, params_);
+      var message = builder.finish();
+      this.receiver_.acceptAndExpectResponse(message).then(function(message) {
+        var reader = new codec.MessageReader(message);
+        var responseParams =
+            reader.decodeStruct(MediaRouteProvider_TerminateRoute_ResponseParams);
+        resolve(responseParams);
+      }).catch(function(result) {
+        reject(Error("Connection error: " + result));
+      });
+    }.bind(this));
+  };
+  MediaRouteProviderPtr.prototype.sendRouteMessage = function() {
+    return MediaRouteProviderProxy.prototype.sendRouteMessage
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.sendRouteMessage = function(mediaRouteId, message) {
+    var params_ = new MediaRouteProvider_SendRouteMessage_Params();
+    params_.mediaRouteId = mediaRouteId;
+    params_.message = message;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_SendRouteMessage_Name,
+        codec.align(MediaRouteProvider_SendRouteMessage_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_SendRouteMessage_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.sendRouteBinaryMessage = function() {
+    return MediaRouteProviderProxy.prototype.sendRouteBinaryMessage
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.sendRouteBinaryMessage = function(mediaRouteId, data) {
+    var params_ = new MediaRouteProvider_SendRouteBinaryMessage_Params();
+    params_.mediaRouteId = mediaRouteId;
+    params_.data = data;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_SendRouteBinaryMessage_Name,
+        codec.align(MediaRouteProvider_SendRouteBinaryMessage_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_SendRouteBinaryMessage_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.startObservingMediaSinks = function() {
+    return MediaRouteProviderProxy.prototype.startObservingMediaSinks
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.startObservingMediaSinks = function(mediaSource) {
+    var params_ = new MediaRouteProvider_StartObservingMediaSinks_Params();
+    params_.mediaSource = mediaSource;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_StartObservingMediaSinks_Name,
+        codec.align(MediaRouteProvider_StartObservingMediaSinks_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_StartObservingMediaSinks_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.stopObservingMediaSinks = function() {
+    return MediaRouteProviderProxy.prototype.stopObservingMediaSinks
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.stopObservingMediaSinks = function(mediaSource) {
+    var params_ = new MediaRouteProvider_StopObservingMediaSinks_Params();
+    params_.mediaSource = mediaSource;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_StopObservingMediaSinks_Name,
+        codec.align(MediaRouteProvider_StopObservingMediaSinks_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_StopObservingMediaSinks_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.startObservingMediaRoutes = function() {
+    return MediaRouteProviderProxy.prototype.startObservingMediaRoutes
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.startObservingMediaRoutes = function(mediaSource) {
+    var params_ = new MediaRouteProvider_StartObservingMediaRoutes_Params();
+    params_.mediaSource = mediaSource;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_StartObservingMediaRoutes_Name,
+        codec.align(MediaRouteProvider_StartObservingMediaRoutes_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_StartObservingMediaRoutes_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.stopObservingMediaRoutes = function() {
+    return MediaRouteProviderProxy.prototype.stopObservingMediaRoutes
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.stopObservingMediaRoutes = function(mediaSource) {
+    var params_ = new MediaRouteProvider_StopObservingMediaRoutes_Params();
+    params_.mediaSource = mediaSource;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_StopObservingMediaRoutes_Name,
+        codec.align(MediaRouteProvider_StopObservingMediaRoutes_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_StopObservingMediaRoutes_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.startListeningForRouteMessages = function() {
+    return MediaRouteProviderProxy.prototype.startListeningForRouteMessages
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.startListeningForRouteMessages = function(routeId) {
+    var params_ = new MediaRouteProvider_StartListeningForRouteMessages_Params();
+    params_.routeId = routeId;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_StartListeningForRouteMessages_Name,
+        codec.align(MediaRouteProvider_StartListeningForRouteMessages_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_StartListeningForRouteMessages_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.stopListeningForRouteMessages = function() {
+    return MediaRouteProviderProxy.prototype.stopListeningForRouteMessages
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.stopListeningForRouteMessages = function(routeId) {
+    var params_ = new MediaRouteProvider_StopListeningForRouteMessages_Params();
+    params_.routeId = routeId;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_StopListeningForRouteMessages_Name,
+        codec.align(MediaRouteProvider_StopListeningForRouteMessages_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_StopListeningForRouteMessages_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  };
+  MediaRouteProviderPtr.prototype.detachRoute = function() {
+    return MediaRouteProviderProxy.prototype.detachRoute
+        .apply(this.ptr.getProxy(), arguments);
+  };
+
+  MediaRouteProviderProxy.prototype.detachRoute = function(routeId) {
+    var params_ = new MediaRouteProvider_DetachRoute_Params();
+    params_.routeId = routeId;
+    var builder = new codec.MessageV0Builder(
+        kMediaRouteProvider_DetachRoute_Name,
+        codec.align(MediaRouteProvider_DetachRoute_Params.encodedSize));
+    builder.encodeStruct(MediaRouteProvider_DetachRoute_Params, params_);
+    var message = builder.finish();
+    this.receiver_.accept(message);
+  }
