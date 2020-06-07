@@ -23,7 +23,7 @@ public class BaseClass {
 
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 
-        //Setting up the login request body
+        // Setting up the login request body
         LoginRequestPojo loginRequestPojo = new LoginRequestPojo(
                 "kudos.user@scalefocus.com",
                 "Test@123456",
